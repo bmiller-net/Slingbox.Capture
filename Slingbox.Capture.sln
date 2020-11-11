@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slingbox.Capture", "Slingbox.Capture\Slingbox.Capture.csproj", "{BF2DE78E-CC5F-4EF4-AD0D-808C8EFE86ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slingbox.API", "Slingbox.API\Slingbox.API.csproj", "{2374CF82-6B8C-4380-90AF-FC9ECB39E8E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF2DE78E-CC5F-4EF4-AD0D-808C8EFE86ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF2DE78E-CC5F-4EF4-AD0D-808C8EFE86ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF2DE78E-CC5F-4EF4-AD0D-808C8EFE86ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF2DE78E-CC5F-4EF4-AD0D-808C8EFE86ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2374CF82-6B8C-4380-90AF-FC9ECB39E8E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2374CF82-6B8C-4380-90AF-FC9ECB39E8E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2374CF82-6B8C-4380-90AF-FC9ECB39E8E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2374CF82-6B8C-4380-90AF-FC9ECB39E8E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
