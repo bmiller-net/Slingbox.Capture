@@ -42,8 +42,8 @@ var sling_account_boxes = {
 1. Open the project in Visual Studio.
 1. Edit `app.config` within Slingbox.Capture.
 1. Under `appSettings`:
-	a. Insert the IP address of your Slingbox in the value for key `Slingbox_IPAddress`.
-	a. Insert the admin password acquired above in the value for key `Slingbox_AdminPassword`.
+    1. Insert the IP address of your Slingbox in the value for key `Slingbox_IPAddress`.
+    1. Insert the admin password acquired above in the value for key `Slingbox_AdminPassword`.
 1. Build and begin debugging Slingbox.Capture. A console window should open and will read `Starting web server... FINISHED. Press any key to quit.` when ready.
 1. Open VLC.
 1. In the Media menu, click "Open Network Stream".
