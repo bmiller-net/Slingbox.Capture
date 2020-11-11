@@ -16,7 +16,7 @@ namespace Slingbox.Capture
     {
         public void Configuration(IAppBuilder appBuilder)
         {
-            var ipAddress = ConfigurationManager.AppSettings[AppSettingsEnum.Slingbox_IPAddress.ToString()].ToString();
+            var ipAddress = IPAddress.Parse(ConfigurationManager.AppSettings[AppSettingsEnum.Slingbox_IPAddress.ToString()].ToString());
             var port = int.Parse(ConfigurationManager.AppSettings[AppSettingsEnum.Slingbox_Port.ToString()].ToString());
             var username = ConfigurationManager.AppSettings[AppSettingsEnum.Slingbox_Username.ToString()].ToString();
             var password = ConfigurationManager.AppSettings[AppSettingsEnum.Slingbox_AdminPassword.ToString()].ToString();
@@ -24,12 +24,7 @@ namespace Slingbox.Capture
             var kernel = new StandardKernel();
 
             kernel.Bind<VideoStream>().To<VideoStream>().InSingletonScope();
-            kernel.Bind<SlingboxService>().To<SlingboxService>()
-                .InSingletonScope()
-                .WithConstructorArgument("ipAddress", ipAddress)
-                .WithConstructorArgument("port", port)
-                .WithConstructorArgument("username", username)
-                .WithConstructorArgument("password", password);
+            kernel.Bind<SlingboxService>().ToConstructor(s => new SlingboxService(ipAddress, port, username, password)).InSingletonScope();
             
             var resolver = new NinjectResolver(kernel);
 
