@@ -1,6 +1,6 @@
 ## Getting started
 
-This project was started (and stalled) several years ago. As a result, it's running on .NET Framework 4.5.2. It consists of an API project and a helper class library. See below for step-by-step instructions on getting started.
+This project was started (and stalled) several years ago. As a result, it's running on .NET Framework 4.5.2. It consists of an API project and a helper class library (which are labeled backwards, don't ask me why.) See below for step-by-step instructions on getting started.
 
 ### Requirements
 
