@@ -16,8 +16,10 @@ namespace Slingbox.Services.Model
             get { return _isStreaming; }
             set
             {
-                OnPropertyChanged();
                 _isStreaming = value;
+
+                if (value != _isStreaming)
+                    OnPropertyChanged();
             }
         }
 

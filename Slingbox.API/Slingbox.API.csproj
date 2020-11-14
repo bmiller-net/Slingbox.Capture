@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Slingbox.Services.NetStandard\Slingbox.Services.NetStandard.csproj" />
+    <ProjectReference Include="..\Slingbox.Services.NetStandard\Slingbox.Services.csproj" />
   </ItemGroup>
 
 </Project>

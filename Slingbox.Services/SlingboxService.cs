@@ -138,9 +138,9 @@ namespace Slingbox.Services
             return SendRequestToSlingbox<StreamStatus>(uri, body);
         }
 
-        public HttpWebResponse GetStream(string uri)
+        public dynamic GetStream(string uri)
         {
-            return SendRequestToSlingbox(uri);
+            return SendRequestToSlingbox<dynamic>(uri);
         }
 
         private T SendRequestToSlingbox<T>(string uri, string body = null) where T : class
@@ -236,7 +236,7 @@ namespace Slingbox.Services
 
         private static string GenerateDigestHash(int requestIndex, string username, string cnonce, string numericURIComponent, string password)
         {
-            var md5 = new MD5Cng();
+            var md5 = MD5.Create();
             md5.Initialize();
 
             var digestComponents = $"{username}:{numericURIComponent}:{cnonce}:{requestIndex}:{password}";
