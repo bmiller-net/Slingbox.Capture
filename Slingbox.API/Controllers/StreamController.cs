@@ -88,15 +88,5 @@ namespace Slingbox.API.Controllers
 
             return new NoContentResult();
         }
-
-        [Route("BandwidthTest")]
-        [HttpGet]
-        public ActionResult GetBandwidthTest()
-        {
-            _slingboxService.Initialize();
-
-            var bandwidthTest = _slingboxService.GetBandwidthTest();
-            return new NoContentResult();
-        }
     }
 }

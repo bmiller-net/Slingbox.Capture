@@ -138,12 +138,6 @@ namespace Slingbox.Services
             return SendRequestToSlingbox<StreamStatus>(uri, body);
         }
 
-        public HttpWebResponse GetBandwidthTest()
-        {
-            var response = SendRequestToSlingbox("bandwidth_test");
-            return response;
-        }
-
         public dynamic GetStream(string uri)
         {
             return SendRequestToSlingbox<dynamic>(uri);
