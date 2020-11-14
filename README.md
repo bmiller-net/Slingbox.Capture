@@ -1,14 +1,14 @@
 ## Getting started
 
-This project was started (and stalled) several years ago. As a result, it's running on .NET Framework 4.5.2. It consists of an API project and a helper class library (which are labeled backwards, don't ask me why.) See below for step-by-step instructions on getting started.
+This project was started (and stalled) several years ago. ~~As a result, it's running on .NET Framework 4.5.2.~~ **It now runs on .NET Core 2.2!** It consists of an API project and a helper class library (~~which are labeled backwards, don't ask me why~~ no longer labeled backwards!) See below for step-by-step instructions on getting started.
 
 ### Requirements
 
 1. A Slingbox connected to your local network
 1. A Slingbox account
 1. Your Slingbox admin password (see below)
-1. .NET Framework 4.5.2
-1. Visual Studio
+1. .NET Core 2.2
+1. Visual Studio (or any other IDE/utilities which compiles/runs .NET Core)
 1. VLC Media Player
 
 #### Slingbox admin password
@@ -40,15 +40,15 @@ var sling_account_boxes = {
 
 ### Setup
 1. Open the project in Visual Studio.
-1. Edit `app.config` within Slingbox.Capture.
-1. Under `appSettings`:
-    1. Insert the IP address of your Slingbox in the value for key `Slingbox_IPAddress`.
-    1. Insert the admin password acquired above in the value for key `Slingbox_AdminPassword`.
-1. Build and begin debugging Slingbox.Capture. A console window should open and will read `Starting web server... FINISHED. Press any key to quit.` when ready.
+1. Edit `appsettings.json` within Slingbox.API.
+1. Under the `Slingbox` key:
+    1. Insert the IP address of your Slingbox in the value for key `IPAddress`.
+    1. Insert the admin password acquired above in the value for key `AdminPassword`.
+1. Build and begin debugging Slingbox.API. ~~A console window should open and will read `Starting web server... FINISHED. Press any key to quit.` when ready.~~ The output is now in the Debug window.
 1. Open VLC.
 1. In the Media menu, click "Open Network Stream".
 1. Copy the following URL into the box: `http://localhost:9090/api/stream/slingbox`.
-1. If everything worked, you should see some activity (see below) in the console window and the output of your cable box should appear in VLC.
+1. If everything worked, you should see some activity (see below) in the ~~console window~~ Debug window and the output of your cable box should appear in VLC.
 <pre>
 Starting web server... FINISHED. Press any key to quit.
 Issuing forceOkStatus request... COMPLETE
