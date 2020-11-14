@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slingbox.Services.Test.Unit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slingbox.Services.Test.Integration", "Slingbox.Services.Test.Integration\Slingbox.Services.Test.Integration.csproj", "{F573C06A-FAF6-4371-AB50-8E9E6F66E868}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slingbox.Services.NetStandard", "Slingbox.Services.NetStandard\Slingbox.Services.NetStandard.csproj", "{7C6FF515-E691-40B7-BA83-EDAF403608C5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slingbox.API", "Slingbox.API\Slingbox.API.csproj", "{58518E4F-2DA0-42CB-9EF9-589EE94F4B82}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slingbox.Services", "Slingbox.Services\Slingbox.Services.csproj", "{B1655B90-C28E-49D0-84D3-3CC91C722595}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{F573C06A-FAF6-4371-AB50-8E9E6F66E868}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F573C06A-FAF6-4371-AB50-8E9E6F66E868}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F573C06A-FAF6-4371-AB50-8E9E6F66E868}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C6FF515-E691-40B7-BA83-EDAF403608C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C6FF515-E691-40B7-BA83-EDAF403608C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C6FF515-E691-40B7-BA83-EDAF403608C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C6FF515-E691-40B7-BA83-EDAF403608C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58518E4F-2DA0-42CB-9EF9-589EE94F4B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{58518E4F-2DA0-42CB-9EF9-589EE94F4B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58518E4F-2DA0-42CB-9EF9-589EE94F4B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58518E4F-2DA0-42CB-9EF9-589EE94F4B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1655B90-C28E-49D0-84D3-3CC91C722595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1655B90-C28E-49D0-84D3-3CC91C722595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1655B90-C28E-49D0-84D3-3CC91C722595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1655B90-C28E-49D0-84D3-3CC91C722595}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
