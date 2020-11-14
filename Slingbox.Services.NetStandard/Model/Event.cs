@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace Slingbox.API.Model
+namespace Slingbox.Services.Model
 {
     public class Event
     {

@@ -1,30 +1,43 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Web.Http;
-using Slingbox.API;
-using Slingbox.API.Model;
+using Microsoft.AspNetCore.Mvc;
+using Slingbox.Services;
+using Slingbox.Services.Model;
 
-namespace Slingbox.Capture
+namespace Slingbox.API.Controllers
 {
-    public class StreamController : ApiController
+    [Route("/api/stream")]
+    public class StreamController : Controller
     {
         private readonly VideoStream _videoStream;
         private readonly SlingboxService _slingboxService;
-
+        private bool _streamingStatus { get; set; }
+        
         public StreamController(VideoStream videoStream, SlingboxService slingboxService)
         {
             _videoStream = videoStream;
             _slingboxService = slingboxService;
-        }
-        
-        [HttpGet]
-        public HttpResponseMessage Slingbox()
-        {
-            var response = Request.CreateResponse();
 
+            _videoStream.PropertyChanged += _videoStream_PropertyChanged;
+        }
+
+        private void _videoStream_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            Debug.WriteLine("Property changed: " + e.PropertyName);
+
+            if (e.PropertyName == "IsStreaming")
+            {
+                Debug.WriteLine($"   Old value was: {_streamingStatus}");
+                _streamingStatus = _videoStream.IsStreaming;
+                Debug.WriteLine($"   New value is: {_streamingStatus}");
+            }
+        }
+
+        [Route("slingbox")]
+        [HttpGet]
+        public ActionResult Slingbox()
+        {
             if (!_videoStream.IsStreaming)
             {
                 Debug.Write("Issuing forceOkStatus request... ");
@@ -53,14 +66,14 @@ namespace Slingbox.Capture
                 if (videoStream == null)
                 {
                     Debug.WriteLine("ERROR OCCURRED");
-                    response.StatusCode = HttpStatusCode.InternalServerError;
+                    HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 }
                 else
                 {
                     Debug.WriteLine("COMPLETE\r\n");
 
                     Debug.WriteLine("Beginning stream playback...");
-                    response.StatusCode = HttpStatusCode.OK;
+                    HttpContext.Response.StatusCode = (int)HttpStatusCode.OK;
 
                     _videoStream.IsStreaming = true;
 
@@ -70,21 +83,10 @@ namespace Slingbox.Capture
 
             if (_videoStream.IsStreaming)
             {
-                response.Content = new StreamContent(_videoStream.Stream);
-                response.Content.Headers.ContentType = new MediaTypeHeaderValue("video/h264");
+                return new FileStreamResult(_videoStream.Stream, "video/h264");
             }
 
-            return response;
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                _videoStream.Dispose();
-            }
-
-            base.Dispose(disposing);
+            return new NoContentResult();
         }
     }
 }

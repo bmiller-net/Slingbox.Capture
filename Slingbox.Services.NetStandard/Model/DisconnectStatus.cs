@@ -1,4 +1,4 @@
-﻿namespace Slingbox.API.Model
+﻿namespace Slingbox.Services.Model
 {
     [System.Xml.Serialization.XmlType(AnonymousType = true, Namespace = "http://www.slingbox.com")]
     [System.Xml.Serialization.XmlRoot(Namespace = "http://www.slingbox.com", ElementName = "session", IsNullable = false)]
