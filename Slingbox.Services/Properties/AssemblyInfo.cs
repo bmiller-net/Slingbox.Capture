@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Slingbox.Capture")]
+[assembly: AssemblyTitle("Slingbox.Services")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Slingbox.Capture")]
+[assembly: AssemblyProduct("Slingbox.Services")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bf2de78e-cc5f-4ef4-ad0d-808c8efe86ed")]
+[assembly: Guid("2374cf82-6b8c-4380-90af-fc9ecb39e8e8")]
 
 // Version information for an assembly consists of the following four values:
 //

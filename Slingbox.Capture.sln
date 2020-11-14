@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slingbox.Capture", "Slingbox.Capture\Slingbox.Capture.csproj", "{BF2DE78E-CC5F-4EF4-AD0D-808C8EFE86ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slingbox.Services.Test.Unit", "Slingbox.Services.Test.Unit\Slingbox.Services.Test.Unit.csproj", "{B629D4AF-9776-455B-A7D5-7041FD43E77F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slingbox.API", "Slingbox.API\Slingbox.API.csproj", "{2374CF82-6B8C-4380-90AF-FC9ECB39E8E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slingbox.Services.Test.Integration", "Slingbox.Services.Test.Integration\Slingbox.Services.Test.Integration.csproj", "{F573C06A-FAF6-4371-AB50-8E9E6F66E868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slingbox.API", "Slingbox.API\Slingbox.API.csproj", "{BF2DE78E-CC5F-4EF4-AD0D-808C8EFE86ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slingbox.Services.NetStandard", "Slingbox.Services.NetStandard\Slingbox.Services.NetStandard.csproj", "{7C6FF515-E691-40B7-BA83-EDAF403608C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slingbox.API.NetCore2", "Slingbox.API.NetCore2\Slingbox.API.NetCore2.csproj", "{7DEDBB9D-10E9-4675-8D4F-4053304E9EAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +19,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B629D4AF-9776-455B-A7D5-7041FD43E77F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B629D4AF-9776-455B-A7D5-7041FD43E77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B629D4AF-9776-455B-A7D5-7041FD43E77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B629D4AF-9776-455B-A7D5-7041FD43E77F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F573C06A-FAF6-4371-AB50-8E9E6F66E868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F573C06A-FAF6-4371-AB50-8E9E6F66E868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F573C06A-FAF6-4371-AB50-8E9E6F66E868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F573C06A-FAF6-4371-AB50-8E9E6F66E868}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BF2DE78E-CC5F-4EF4-AD0D-808C8EFE86ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BF2DE78E-CC5F-4EF4-AD0D-808C8EFE86ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF2DE78E-CC5F-4EF4-AD0D-808C8EFE86ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF2DE78E-CC5F-4EF4-AD0D-808C8EFE86ED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2374CF82-6B8C-4380-90AF-FC9ECB39E8E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2374CF82-6B8C-4380-90AF-FC9ECB39E8E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2374CF82-6B8C-4380-90AF-FC9ECB39E8E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2374CF82-6B8C-4380-90AF-FC9ECB39E8E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6FF515-E691-40B7-BA83-EDAF403608C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6FF515-E691-40B7-BA83-EDAF403608C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6FF515-E691-40B7-BA83-EDAF403608C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6FF515-E691-40B7-BA83-EDAF403608C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DEDBB9D-10E9-4675-8D4F-4053304E9EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DEDBB9D-10E9-4675-8D4F-4053304E9EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DEDBB9D-10E9-4675-8D4F-4053304E9EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DEDBB9D-10E9-4675-8D4F-4053304E9EAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6A4D5A9-F520-4C23-B742-EC083BA69901}
 	EndGlobalSection
 EndGlobal

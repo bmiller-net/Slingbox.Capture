@@ -1,16 +1,13 @@
 ﻿using System.Configuration;
 using System.Net;
 using System.Web.Http;
-using System.Web.Http.Dependencies;
 using Ninject;
-using Ninject.Components;
-using Ninject.Web.Common;
 using Owin;
-using Slingbox.API;
-using Slingbox.API.Model;
+using Slingbox.Services;
+using Slingbox.Services.Model;
 using WebApiContrib.IoC.Ninject;
 
-namespace Slingbox.Capture
+namespace Slingbox.API
 {
     public class OwinStartup
     {

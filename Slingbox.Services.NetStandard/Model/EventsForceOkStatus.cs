@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace Slingbox.API.Model
+namespace Slingbox.Services.Model
 {
     [XmlType(AnonymousType = true, Namespace = "http://www.slingbox.com")]
     [XmlRoot(Namespace = "http://www.slingbox.com", ElementName = "events", IsNullable = false)]

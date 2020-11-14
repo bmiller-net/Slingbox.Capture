@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-namespace Slingbox.API.Model
+namespace Slingbox.Services.Model
 {
     public class VideoStream : IDisposable, INotifyPropertyChanged
     {

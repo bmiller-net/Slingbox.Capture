@@ -1,4 +1,4 @@
-﻿namespace Slingbox.Capture
+﻿namespace Slingbox.API
 {
     enum AppSettingsEnum
     {

@@ -4,22 +4,39 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Http;
-using Slingbox.API;
-using Slingbox.API.Model;
+using Slingbox.Services;
+using Slingbox.Services.Model;
 
-namespace Slingbox.Capture
+namespace Slingbox.API
 {
     public class StreamController : ApiController
     {
         private readonly VideoStream _videoStream;
         private readonly SlingboxService _slingboxService;
-
+        private bool _streamingStatus { get; set; }
+        
         public StreamController(VideoStream videoStream, SlingboxService slingboxService)
         {
             _videoStream = videoStream;
             _slingboxService = slingboxService;
+
+            _videoStream.PropertyChanged += _videoStream_PropertyChanged;
+
+            
         }
-        
+
+        private void _videoStream_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            Debug.WriteLine("Property changed: " + e.PropertyName);
+
+            if (e.PropertyName == "IsStreaming")
+            {
+                Debug.WriteLine($"   Old value was: {_streamingStatus}");
+                _streamingStatus = _videoStream.IsStreaming;
+                Debug.WriteLine($"   New value is: {_streamingStatus}");
+            }
+        }
+
         [HttpGet]
         public HttpResponseMessage Slingbox()
         {

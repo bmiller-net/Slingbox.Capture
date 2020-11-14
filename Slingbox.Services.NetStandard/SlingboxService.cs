@@ -5,9 +5,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Xml.Serialization;
-using Slingbox.API.Model;
+using Slingbox.Services.Model;
 
-namespace Slingbox.API
+namespace Slingbox.Services
 {
     public class SlingboxService : IDisposable
     {
@@ -236,7 +236,7 @@ namespace Slingbox.API
 
         private static string GenerateDigestHash(int requestIndex, string username, string cnonce, string numericURIComponent, string password)
         {
-            var md5 = new MD5Cng();
+            var md5 = MD5.Create();
             md5.Initialize();
 
             var digestComponents = $"{username}:{numericURIComponent}:{cnonce}:{requestIndex}:{password}";

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Owin.Hosting;
 
-namespace Slingbox.Capture
+namespace Slingbox.API
 {
     class Program
     {
