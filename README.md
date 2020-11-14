@@ -8,7 +8,7 @@ This project was started (and stalled) several years ago. ~~As a result, it's ru
 1. A Slingbox account
 1. Your Slingbox admin password (see below)
 1. .NET Core 2.2
-1. Visual Studio (or any other IDE/utilities which compiles/runs .NET Core)
+1. Visual Studio (or any other IDE/utility which compiles/runs .NET Core)
 1. VLC Media Player
 
 #### Slingbox admin password
