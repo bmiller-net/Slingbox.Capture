@@ -44,7 +44,7 @@ var sling_account_boxes = {
 1. Under the `Slingbox` key:
     1. Insert the IP address of your Slingbox in the value for key `IPAddress`.
     1. Insert the admin password acquired above in the value for key `AdminPassword`.
-1. Build and begin debugging Slingbox.API. Open the Debug window, it will show ~~A console window should open and will read~~ `Starting web server... FINISHED. Press any key to quit.` when ready.
+1. Build and begin debugging Slingbox.API. Open the Debug window, it will show `Starting web server... FINISHED. Press any key to quit.` when ready.
 1. Open VLC.
 1. In the Media menu, click "Open Network Stream".
 1. Copy the following URL into the box: `http://localhost:9090/api/stream/slingbox`.
