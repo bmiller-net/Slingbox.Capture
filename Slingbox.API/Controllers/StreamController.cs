@@ -1,15 +1,14 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using Slingbox.Services;
 using Slingbox.Services.Model;
 
-namespace Slingbox.API
+namespace Slingbox.API.Controllers
 {
-    public class StreamController : ApiController
+    [Route("/api/stream")]
+    public class StreamController : Controller
     {
         private readonly VideoStream _videoStream;
         private readonly SlingboxService _slingboxService;
@@ -21,8 +20,6 @@ namespace Slingbox.API
             _slingboxService = slingboxService;
 
             _videoStream.PropertyChanged += _videoStream_PropertyChanged;
-
-            
         }
 
         private void _videoStream_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -37,11 +34,10 @@ namespace Slingbox.API
             }
         }
 
+        [Route("slingbox")]
         [HttpGet]
-        public HttpResponseMessage Slingbox()
+        public ActionResult Slingbox()
         {
-            var response = Request.CreateResponse();
-
             if (!_videoStream.IsStreaming)
             {
                 Debug.Write("Issuing forceOkStatus request... ");
@@ -70,14 +66,14 @@ namespace Slingbox.API
                 if (videoStream == null)
                 {
                     Debug.WriteLine("ERROR OCCURRED");
-                    response.StatusCode = HttpStatusCode.InternalServerError;
+                    HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 }
                 else
                 {
                     Debug.WriteLine("COMPLETE\r\n");
 
                     Debug.WriteLine("Beginning stream playback...");
-                    response.StatusCode = HttpStatusCode.OK;
+                    HttpContext.Response.StatusCode = (int)HttpStatusCode.OK;
 
                     _videoStream.IsStreaming = true;
 
@@ -87,21 +83,20 @@ namespace Slingbox.API
 
             if (_videoStream.IsStreaming)
             {
-                response.Content = new StreamContent(_videoStream.Stream);
-                response.Content.Headers.ContentType = new MediaTypeHeaderValue("video/h264");
+                return new FileStreamResult(_videoStream.Stream, "video/h264");
             }
 
-            return response;
+            return new NoContentResult();
         }
 
-        protected override void Dispose(bool disposing)
+        [Route("BandwidthTest")]
+        [HttpGet]
+        public ActionResult GetBandwidthTest()
         {
-            if (disposing)
-            {
-                _videoStream.Dispose();
-            }
+            _slingboxService.Initialize();
 
-            base.Dispose(disposing);
+            var bandwidthTest = _slingboxService.GetBandwidthTest();
+            return new NoContentResult();
         }
     }
 }

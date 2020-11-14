@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Slingbox.API.NetCore2
+﻿namespace Slingbox.API
 {
     public class SlingboxConfiguration
     {

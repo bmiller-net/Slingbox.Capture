@@ -1,31 +1,17 @@
-﻿using System;
-using Microsoft.Owin.Hosting;
+﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Slingbox.API
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.Write("Starting web server... ");
-
-            StartWebServer();
-            
-            Console.WriteLine("FINISHED. Press any key to quit.");
-
-            Console.ReadKey();
+            CreateWebHostBuilder(args).Build().Run();
         }
 
-        private static void Console_CancelKeyPress(object sender, ConsoleCancelEventArgs e)
-        {
-            
-        }
-
-        private static void StartWebServer()
-        {
-            var baseAddress = "http://localhost:9090/";
-
-            WebApp.Start<OwinStartup>(url: baseAddress);
-        }
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>();
     }
 }
