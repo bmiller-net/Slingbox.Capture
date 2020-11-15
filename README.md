@@ -38,6 +38,14 @@ var sling_account_boxes = {
 }
 </pre>
 
+#### Slingbox port
+
+1. Open a new tab in Chrome or Firefox, and open dev tools.
+1. Open the network tab.
+1. Navigate to newwatch.slingbox.com, log in if you have to.
+	1. One of the requests in the network window should be to the following URL: http://newwatch.slingbox.com/watch/slingAccounts/get_slingbox_sparcs_info/?finderId=your-finder-id&_=1605380817768
+	1. In the JSON response object, one of the fields is devicePort. If that is different that 5207, sub that in to the appsettings.json file.
+
 ### Setup
 1. Open the project in Visual Studio.
 1. Edit `appsettings.json` within Slingbox.API.
